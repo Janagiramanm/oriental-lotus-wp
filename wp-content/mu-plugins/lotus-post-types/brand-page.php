@@ -18,7 +18,7 @@ function setup_brand_page() {
 		"public" => true,
 		'has_archive' => true,
 		"show_in_rest" => true,
-		"menu_icon" => "dashicons-businessman",
+		"menu_icon" => "dashicons-tag",
 		"rewrite" => [
 			"slug" => "brand-page"
 		],
