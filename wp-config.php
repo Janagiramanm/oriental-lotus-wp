@@ -25,7 +25,7 @@
 define( 'DB_NAME', 'oriental_lotus_wp' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', '$QgIcsnU8QNnJ7&AA1' );
 
 /** Database password */
 define( 'DB_PASSWORD', 'root' );
