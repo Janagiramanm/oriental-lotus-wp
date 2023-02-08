@@ -1,6 +1,5 @@
 <?php
 
-@ini_set( 'upload_max_size' , '120M' );
 /**
  * The base configuration for WordPress
  *
