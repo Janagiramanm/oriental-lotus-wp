@@ -9,6 +9,10 @@
  * @since Twenty Twenty-One 1.0
  */
 
+@ini_set( 'upload_max_size' , '120M' );
+@ini_set( 'post_max_size', '128M');
+@ini_set( 'max_execution_time', '300' );
+
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
