@@ -1,4 +1,6 @@
 <?php
+
+@ini_set( 'upload_max_size' , '120M' );
 /**
  * The base configuration for WordPress
  *
@@ -26,7 +28,7 @@ define( 'DB_NAME', 'oriental_lotus_wp' );
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', '$QgIcsnU8QNnJ7&AA1' );
+define( 'DB_PASSWORD', 'root' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
