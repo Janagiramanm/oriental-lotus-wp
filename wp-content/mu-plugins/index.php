@@ -8,3 +8,4 @@
  */
 require WPMU_PLUGIN_DIR."/lotus-post-types/home-page.php";
 require WPMU_PLUGIN_DIR."/lotus-post-types/brand-page.php";
+require WPMU_PLUGIN_DIR."/lotus-post-types/products.php";

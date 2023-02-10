@@ -659,6 +659,4 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	}
 endif;
 
-add_filter('wp_image_editors', function($editors) {
-    return ['WP_Image_Editor_GD', 'WP_Image_Editor_Imagick'];
-});
+
