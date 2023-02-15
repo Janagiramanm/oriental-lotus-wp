@@ -9,3 +9,5 @@
 require WPMU_PLUGIN_DIR."/lotus-post-types/home-page.php";
 require WPMU_PLUGIN_DIR."/lotus-post-types/brand-page.php";
 require WPMU_PLUGIN_DIR."/lotus-post-types/products.php";
+require WPMU_PLUGIN_DIR."/lotus-post-types/product-category.php";
+require WPMU_PLUGIN_DIR."/custom-endpoints/index.php";
