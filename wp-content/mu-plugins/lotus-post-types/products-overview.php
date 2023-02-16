@@ -5,7 +5,7 @@ function setup_product_overview_page() {
 		"label" => "Product Overview",
 		"labels" => [
 			"name" => "Product Overview",
-			"singular_name" => "product-category",
+			"singular_name" => "product-overview",
 			"add_new_item" => "Add New Product Category",
 			"edit_item" => "Edit Product Overview",
 			"view_item" => "View Product Overview",
