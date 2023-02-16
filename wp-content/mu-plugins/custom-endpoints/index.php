@@ -28,6 +28,7 @@ function lotus_products() {
         'order' => 'ASC',
     );
     $result = new WP_Query( $args );
+	echo $GLOBALS['wp_query']->request;
 	get_fields();
 	$data= [];
 	if($result->posts){
