@@ -4,7 +4,7 @@ function setup_product_category_page() {
 	register_post_type("product-category", [
 		"label" => "Product Category",
 		"labels" => [
-			"name" => "Product Category",
+			"name" => "Product Overview",
 			"singular_name" => "product-category",
 			"add_new_item" => "Add New Product Category",
 			"edit_item" => "Edit Product Category",
