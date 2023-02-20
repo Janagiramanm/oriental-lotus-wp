@@ -38,14 +38,14 @@ function lotus_products() {
 			$data[]['acf'] = get_fields($value->ID);
 		}
 
-		// print_r($data);
+		print_r($data);
 		foreach($data as $key1 => $value1){
 			$data[$key1]['acf']['brand'] = get_fields($value1['acf']['brand']->ID);
 		}
 		
 	}
 	
-	// exit;
+	exit;
     wp_send_json($data);
 }
 
