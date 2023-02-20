@@ -29,16 +29,23 @@ function lotus_products() {
         'order' => 'ASC',
     );
     $result = new WP_Query( $args );
+	// echo '<pre>';
+	// print_r($result->posts);
+	// exit;
 	$data= [];
 	if($result->posts){
 		foreach($result->posts as $key => $value){
 			$data[]['acf'] = get_fields($value->ID);
 		}
+
+		
 		foreach($data as $key1 => $value1){
 			$data[$key1]['acf']['brand'] = get_fields($value1['acf']['brand'][0]->ID);
 		}
 		
 	}
+	// print_r($data);
+	// exit;
     wp_send_json($data);
 }
 
