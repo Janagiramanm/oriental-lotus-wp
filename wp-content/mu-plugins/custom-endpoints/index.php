@@ -15,6 +15,7 @@ Domain Path:  /languages
 function lotus_products() {
 	$meta_key = $_REQUEST['meta_key'];
 	$meta_value = $_REQUEST['meta_value'];
+	
 	$args = array(
         'post_type' => 'products',
 		'meta_query' => array(
@@ -28,21 +29,17 @@ function lotus_products() {
         'order' => 'ASC',
     );
     $result = new WP_Query( $args );
-	
-	get_fields();
 	$data= [];
 	if($result->posts){
 		foreach($result->posts as $key => $value){
-			// $data['title'] = get_field( "text_field", $value->ID );
-			// $data['title'] = get_field('product_title',$value->ID);
-			$data[] = get_fields($value->ID);
+			$data[]['acf'] = get_fields($value->ID);
 		}
-
+		foreach($data as $key1 => $value1){
+			$data[$key1]['acf']['brand'] = get_fields($value1['acf']['brand'][0]->ID);
+		}
+		
 	}
-    // echo '<pre>';
-    // print_r($result->posts);
-	// print_r($data);
-	wp_send_json($data);
+    wp_send_json($data);
 }
 
 add_action('rest_api_init', function() {
