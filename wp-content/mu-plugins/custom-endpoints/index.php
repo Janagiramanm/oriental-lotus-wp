@@ -25,6 +25,7 @@ function lotus_products() {
                 'compare' => '=', // use 'LIKE' to match against serialized data
             ),
         ),
+		'posts_per_page' => -1,
 		'orderby' => 'ID',
         'order' => 'ASC',
     );
