@@ -15,6 +15,7 @@ Domain Path:  /languages
 function lotus_products() {
 	$meta_key = $_REQUEST['meta_key'];
 	$meta_value = $_REQUEST['meta_value'];
+	$paged = $_REQUEST['paged'];
 	
 	$args = array(
         'post_type' => 'products',
@@ -26,6 +27,7 @@ function lotus_products() {
             ),
         ),
 		'posts_per_page' => -1,
+		'paged' => $paged,
 		'orderby' => 'ID',
         'order' => 'ASC',
     );
