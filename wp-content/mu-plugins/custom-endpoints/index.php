@@ -16,6 +16,11 @@ function lotus_products() {
 	$meta_key = $_REQUEST['meta_key'];
 	$meta_value = $_REQUEST['meta_value'];
 	$paged = $_REQUEST['paged'];
+    $per_page = $_REQUEST['per_page'] ? $_REQUEST['per_page'] : 9;
+	header("Access-Control-Allow-Origin: *");
+	// header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
+	// header("Access-Control-Allow-Credentials: true");
+	// header('Access-Control-Allow-Headers: Origin, X-Requested-With, X-WP-Nonce, Content-Type, Accept, Authorization');
 	
 	$args = array(
         'post_type' => 'products',
@@ -26,25 +31,27 @@ function lotus_products() {
                 'compare' => '=', // use 'LIKE' to match against serialized data
             ),
         ),
-		'posts_per_page' => -1,
+		'posts_per_page' => $per_page,
 		'paged' => $paged,
 		'orderby' => 'ID',
         'order' => 'ASC',
     );
     $result = new WP_Query( $args );
-	// echo '<pre>';
-	// print_r($result->posts);
-	// exit;
-	$data= [];
+	
+	$data = [];
+	$data['count'] = $result->found_posts;
+	
 	if($result->posts){
+		
 		foreach($result->posts as $key => $value){
-			$data[]['acf'] = get_fields($value->ID);
+			$data['data'][]['acf'] = get_fields($value->ID);
 		}
 
 		// print_r($data);
-		foreach($data as $key1 => $value1){
-			$data[$key1]['acf']['brand'] = get_fields($value1['acf']['brand']->ID);
+		foreach($data['data'] as $key1 => $value1){
+			$data['data'][$key1]['acf']['brand'] = get_fields($value1['acf']['brand']->ID);
 		}
+		
 		
 	}
 	
